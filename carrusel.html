@@ -1,0 +1,38 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="foto1.jpg" alt="Foto 1" /></div>
+    <div class="swiper-slide"><img src="foto2.jpg" alt="Foto 2" /></div>
+    <div class="swiper-slide"><img src="foto3.jpg" alt="Foto 3" /></div>
+    <!-- Agrega más imágenes aquí -->
+  </div>
+
+  <!-- Botones de navegación -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- Paginación (opcional) -->
+  <div class="swiper-pagination"></div>
+</div>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>

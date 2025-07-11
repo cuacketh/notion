@@ -1,99 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8" />
+  <title>Carrusel Aleatorio Swiper</title>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .swiper {
+      width: 90%;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      background-color: #fff;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #B8860B;
+      background-color: rgba(240, 248, 255, 0.8);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: rgba(240, 248, 255, 1);
+    }
+
+    .swiper-pagination {
+      bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    autoplay: {
-      delay: 4000,     // cambia de imagen cada 3 segundos
-      disableOnInteraction: true // no sigue moviéndose aunque el usuario interactúe
-    }
-  });
-</script>
 
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="foto (1).jpg" alt="Foto 1" /></div>
-    <div class="swiper-slide"><img src="foto (2).jpg" alt="Foto 2" /></div>
-    <div class="swiper-slide"><img src="foto (3).jpg" alt="Foto 3" /></div>
-    <div class="swiper-slide"><img src="foto (4).jpg" alt="Foto 4" /></div>
-    <div class="swiper-slide"><img src="foto (5).jpg" alt="Foto 5" /></div>
-    <div class="swiper-slide"><img src="foto (6).jpg" alt="Foto 6" /></div>
-    <div class="swiper-slide"><img src="foto (7).jpg" alt="Foto 7" /></div>
-    <div class="swiper-slide"><img src="foto (8).jpg" alt="Foto 8" /></div>
-    <div class="swiper-slide"><img src="foto (9).jpg" alt="Foto 9" /></div>
-    <div class="swiper-slide"><img src="foto (10).jpg" alt="Foto 10" /></div>
-    <div class="swiper-slide"><img src="foto (11).jpg" alt="Foto 11" /></div>
-    <div class="swiper-slide"><img src="foto (12).jpg" alt="Foto 12" /></div>
-    <div class="swiper-slide"><img src="foto (13).jpg" alt="Foto 13" /></div>
-    <div class="swiper-slide"><img src="foto (14).jpg" alt="Foto 14" /></div>
-    <div class="swiper-slide"><img src="foto (15).jpg" alt="Foto 15" /></div>
-    <div class="swiper-slide"><img src="foto (16).jpg" alt="Foto 16" /></div>
-    <div class="swiper-slide"><img src="foto (17).jpg" alt="Foto 17" /></div>
-    <div class="swiper-slide"><img src="foto (18).jpg" alt="Foto 18" /></div>
-    <div class="swiper-slide"><img src="foto (19).jpg" alt="Foto 19" /></div>
-    <div class="swiper-slide"><img src="foto (20).jpg" alt="Foto 20" /></div>
-    <!-- Agrega más imágenes aquí -->
+  <div class="swiper">
+    <div class="swiper-wrapper" id="swiper-wrapper">
+      <div class="swiper-slide"><img src="foto (1).jpg" alt="Foto 1" /></div>
+      <div class="swiper-slide"><img src="foto (2).jpg" alt="Foto 2" /></div>
+      <div class="swiper-slide"><img src="foto (3).jpg" alt="Foto 3" /></div>
+      <div class="swiper-slide"><img src="foto (4).jpg" alt="Foto 4" /></div>
+      <div class="swiper-slide"><img src="foto (5).jpg" alt="Foto 5" /></div>
+      <div class="swiper-slide"><img src="foto (6).jpg" alt="Foto 6" /></div>
+      <div class="swiper-slide"><img src="foto (7).jpg" alt="Foto 7" /></div>
+      <div class="swiper-slide"><img src="foto (8).jpg" alt="Foto 8" /></div>
+      <div class="swiper-slide"><img src="foto (9).jpg" alt="Foto 9" /></div>
+      <div class="swiper-slide"><img src="foto (10).jpg" alt="Foto 10" /></div>
+      <!-- Puedes seguir agregando más -->
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-  function shuffleSlides() {
-    const wrapper = document.getElementById('swiper-wrapper');
-    const slides = Array.from(wrapper.children);
-    slides.sort(() => Math.random() - 0.5); // Baraja aleatoriamente
-    slides.forEach(slide => wrapper.appendChild(slide)); // Reordena en el DOM
-  }
-
-  shuffleSlides(); // Ejecuta el barajado
-
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
+    function shuffleSlides() {
+      const wrapper = document.getElementById('swiper-wrapper');
+      const slides = Array.from(wrapper.children);
+      slides.sort(() => Math.random() - 0.5);
+      slides.forEach(slide => wrapper.appendChild(slide));
     }
-  });
-</script>
 
-  <!-- Botones de navegación -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+    shuffleSlides();
 
-  <!-- Paginación (opcional) -->
-  <div class="swiper-pagination"></div>
-</div>
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-</script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>

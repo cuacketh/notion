@@ -6,7 +6,24 @@
 </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 4000,     // cambia de imagen cada 3 segundos
+      disableOnInteraction: true // no sigue moviéndose aunque el usuario interactúe
+    }
+  });
+</script>
 
 <div class="swiper">
   <div class="swiper-wrapper">
@@ -32,6 +49,33 @@
     <div class="swiper-slide"><img src="foto (20).jpg" alt="Foto 20" /></div>
     <!-- Agrega más imágenes aquí -->
   </div>
+
+  <script>
+  function shuffleSlides() {
+    const wrapper = document.getElementById('swiper-wrapper');
+    const slides = Array.from(wrapper.children);
+    slides.sort(() => Math.random() - 0.5); // Baraja aleatoriamente
+    slides.forEach(slide => wrapper.appendChild(slide)); // Reordena en el DOM
+  }
+
+  shuffleSlides(); // Ejecuta el barajado
+
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>
 
   <!-- Botones de navegación -->
   <div class="swiper-button-next"></div>
